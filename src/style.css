@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono";
+    color: var(--fg);
+}
+
+body {
+    padding: 10px;
+    background: var(--bg);
+    font-size: 18px;
+    min-height: 100vh;
+}
+
+/* Theming */
+
+::selection {
+    background: var(--selection);
+}
+
+.red {
+    color: var(--red);
+}
+
+.orange {
+    color: var(--orange);
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.green {
+    color: var(--green);
+}
+
+.purple {
+    color: var(--purple);
+}
+
+.cyan {
+    color: var(--cyan);
+}
+
+.pink {
+    color: var(--pink);
+}
+
+/* WinBox */
+.winbox .wb-header {
+    background: var(--selection);
+    color: var(--fg);
+}
+
+.winbox .wb-header .wb-title {
+    font-family: "Roboto Mono";
+}
+
+/* Layout */
+
+.terminal-output p {
+    white-space: pre-wrap;
+}
+
+.command {
+    display: flex;
+}
+
+.terminal-input {
+    display: inline-block;
+    flex: 1;
+    margin-left: 11px;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 18px;
+}

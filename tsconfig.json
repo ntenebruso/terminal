@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "moduleResolution": "Node",
+        "isolatedModules": true,
+        "useDefineForClassFields": true,
+        "resolveJsonModule": true
+    },
+    "include": ["src"]
+}
