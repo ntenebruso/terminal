@@ -1,6 +1,7 @@
 import * as packageJSON from "../../package.json";
 import WinBox from "winbox/src/js/winbox";
-import { Terminal } from "../terminal";
+import { Terminal } from "../lib/terminal";
+import { setTheme, THEMES } from "../lib/colors";
 
 export function gui(term: Terminal) {
     new WinBox({
@@ -27,9 +28,32 @@ export function banner(term: Terminal) {
 /_/ |_/    /_/  \\___/_/ /_/\\___/_.___/_/   \\__,_/____/\\____/   ${packageJSON.version}
                                                              
 </span>
-<span class="purple">Type '<span class="cyan">help</span>' to see a list of available commands.</span>
+<span class="blue">Type '<span class="cyan">help</span>' to see a list of available commands.</span>
 
 --
 &#127881; This project is open-source! Type "repo" to view the repository.
 `);
+}
+
+export function test(term: Terminal) {
+    term.println("hi");
+    setTimeout(() => term.println("hi2"), 1000);
+}
+
+export function theme(term: Terminal, scheme: string) {
+    if (!scheme) {
+        term.println("Usage: theme [name]");
+        term.println(
+            "Available themes: " +
+                THEMES.map((theme) => theme.name).join(" ") +
+                " random"
+        );
+        return;
+    }
+
+    try {
+        setTheme(scheme);
+    } catch (e) {
+        term.println(`Theme not found: ${scheme}`);
+    }
 }

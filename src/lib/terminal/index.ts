@@ -52,7 +52,11 @@ export class Terminal {
             const val = this.terminalInputElement.value;
             if (e.code == "Enter") {
                 this.commandHistory.push(val);
+                if (this.commandHistory.length > 100) {
+                    this.commandHistory.shift();
+                }
                 commandHistoryIndex = this.commandHistory.length;
+
                 this.println(this.prompt + val);
                 this.execute(val);
                 this.terminalInputElement.value = "";
@@ -152,15 +156,18 @@ export class Terminal {
             return;
         }
 
+        this.terminalPromptElement.innerHTML = "";
         this.commands.get(command)![0](this, ...args);
+        this.terminalPromptElement.innerHTML = this.prompt;
     }
 
     public print(message: string) {
         this.terminalOutputElement.innerHTML += message;
+        this.terminalInputElement.scrollIntoView();
     }
 
     public println(message: string) {
-        this.terminalOutputElement.innerHTML += message + "\n";
+        this.print(message + "\n");
     }
 
     public clear() {

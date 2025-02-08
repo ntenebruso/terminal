@@ -19,32 +19,36 @@ body {
     background: var(--selection);
 }
 
+.black {
+    color: var(--black);
+}
+
 .red {
     color: var(--red);
-}
-
-.orange {
-    color: var(--orange);
-}
-
-.yellow {
-    color: var(--yellow);
 }
 
 .green {
     color: var(--green);
 }
 
-.purple {
-    color: var(--purple);
+.yellow {
+    color: var(--yellow);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.magenta {
+    color: var(--magenta);
 }
 
 .cyan {
     color: var(--cyan);
 }
 
-.pink {
-    color: var(--pink);
+.white {
+    color: var(--white);
 }
 
 /* WinBox */

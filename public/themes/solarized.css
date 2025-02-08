@@ -1,0 +1,17 @@
+/* Theme Template (using Dracula color scheme) */
+
+:root {
+    --bg: #002b36;
+    --fg: #839496;
+    --selection: #003d4d;
+
+    /* Below, please use the ANSI convention. */
+    --black: #073642;
+    --red: #dc322f;
+    --green: #859900;
+    --yellow: #b58900;
+    --blue: #268bd2;
+    --magenta: #d33682;
+    --cyan: #2aa198;
+    --white: #eee8d5;
+}
