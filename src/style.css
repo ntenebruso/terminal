@@ -59,20 +59,10 @@ body {
 
 /* Layout */
 
-.terminal-output p {
-    white-space: pre-wrap;
-}
-
-.command {
-    display: flex;
-}
-
 .terminal-input {
     display: inline-block;
-    flex: 1;
-    margin-left: 11px;
     background: transparent;
     outline: none;
     border: none;
-    font-size: 18px;
+    font-size: inherit;
 }

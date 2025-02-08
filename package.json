@@ -5,15 +5,16 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "tsc --noEmit && vite build",
+        "build": "tsc && vite build",
         "preview": "vite preview"
     },
     "devDependencies": {
-        "typescript": "^4.6.4",
-        "vite": "^2.9.9"
+        "@types/winbox": "^0.2.5",
+        "typescript": "^5.7.3",
+        "vite": "^6.0.11"
     },
     "dependencies": {
-        "@fontsource/roboto-mono": "^4.5.7",
-        "winbox": "^0.2.1"
+        "@fontsource/roboto-mono": "^5.1.1",
+        "winbox": "^0.2.82"
     }
 }

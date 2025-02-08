@@ -1,31 +1,25 @@
-import * as commands from "../commands";
 import * as packageJSON from "../../package.json";
 import WinBox from "winbox/src/js/winbox";
+import { Terminal } from "../terminal";
 
-export function help() {
-    const availableCommands = Object.keys(commands).sort().join(", ");
-
-    return `Available commands:\n\t${availableCommands}`;
-}
-
-export function gui() {
+export function gui(term: Terminal) {
     new WinBox({
         title: "Portfolio",
         html: `<iframe src="https://ntenebruso.github.io/" frameborder="0" />`,
         class: "no-full no-min",
     });
 
-    return "Opening portfolio gui...";
+    term.print("Opening portfolio gui...");
 }
 
-export function repo() {
+export function repo(term: Terminal) {
     window.open("https://github.com/ntenebruso/terminal-portfolio", "_blank");
 
-    return "Opening GitHub repo...";
+    term.println("Opening GitHub repo...");
 }
 
-export function banner() {
-    return `<span class="green">
+export function banner(term: Terminal) {
+    term.println(`<span class="green">
     _   __   ______                __                        
    / | / /  /_  __/__  ____  ___  / /_  _______  ___________ 
   /  |/ /    / / / _ \\/ __ \\/ _ \\/ __ \\/ ___/ / / / ___/ __ \\
@@ -37,5 +31,5 @@ export function banner() {
 
 --
 &#127881; This project is open-source! Type "repo" to view the repository.
-`;
+`);
 }
