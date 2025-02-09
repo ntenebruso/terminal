@@ -46,8 +46,16 @@ export function theme(term: Terminal, scheme: string) {
         return;
     }
 
+    if (scheme == "random") {
+        const rand = Math.floor(Math.random() * THEMES.length);
+        setTheme(THEMES[rand].name);
+        term.println(`Switched theme to random theme ${THEMES[rand].name}`);
+        return;
+    }
+
     try {
         setTheme(scheme);
+        term.println(`Switched theme to ${scheme}`);
     } catch (e) {
         term.println(`Theme not found: ${scheme}`);
     }

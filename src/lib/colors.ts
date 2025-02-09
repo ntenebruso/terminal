@@ -1,5 +1,9 @@
 export const THEMES = [
     {
+        name: "catpuccin",
+        file: "catpuccin.css",
+    },
+    {
         name: "dracula",
         file: "dracula.css",
     },

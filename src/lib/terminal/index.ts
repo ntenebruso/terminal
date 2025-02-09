@@ -26,14 +26,17 @@ export class Terminal {
     private initializeDOM() {
         const termOutput = document.createElement("div");
         termOutput.style.whiteSpace = "pre-wrap";
+        termOutput.classList.add("terminal-output");
         this.terminalContainerElement.append(termOutput);
         this.terminalOutputElement = termOutput;
 
         const termInputWrapper = document.createElement("div");
+        termInputWrapper.classList.add("terminal-input-wrapper");
         this.terminalContainerElement.append(termInputWrapper);
 
         const termPrompt = document.createElement("span");
         termPrompt.innerHTML = this.prompt;
+        termPrompt.classList.add("terminal-prompt");
         termInputWrapper.append(termPrompt);
         this.terminalPromptElement = termPrompt;
 
@@ -109,11 +112,13 @@ export class Terminal {
             "help",
             () => {
                 let availableCommands = "";
-                this.commands.forEach(([_fn, options], command) => {
-                    availableCommands += `\n\t${command}`;
-                    if (options?.description)
-                        availableCommands += ` - ${options.description}`;
-                });
+                new Map(Array.from(this.commands.entries()).sort()).forEach(
+                    ([_fn, options], command) => {
+                        availableCommands += `\n\t${command}`;
+                        if (options?.description)
+                            availableCommands += ` - ${options.description}`;
+                    }
+                );
                 this.println(`Available commands:${availableCommands}`);
             },
             {

@@ -15,9 +15,11 @@ terminal.setPrompt(prompt);
 // Register Commands
 terminal.registerCommand("banner", commands.banner);
 terminal.registerCommand("gui", commands.gui);
-terminal.registerCommand("repo", commands.repo);
+terminal.registerCommand("repo", commands.repo, {
+    description: "Opens this project's GitHub repository",
+});
 terminal.registerCommand("theme", commands.theme, {
-    description: "Set the active color scheme",
+    description: "Sets the active color scheme",
 });
 
 terminal.execute("banner");

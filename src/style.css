@@ -16,7 +16,8 @@ body {
 /* Theming */
 
 ::selection {
-    background: var(--selection);
+    background: var(--fg);
+    color: var(--bg);
 }
 
 .black {
@@ -63,10 +64,19 @@ body {
 
 /* Layout */
 
+.terminal-prompt {
+    white-space: pre-wrap;
+}
+
+.terminal-input-wrapper {
+    display: flex;
+}
+
 .terminal-input {
     display: inline-block;
     background: transparent;
     outline: none;
     border: none;
     font-size: inherit;
+    flex: 1;
 }
