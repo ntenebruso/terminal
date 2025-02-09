@@ -15,7 +15,7 @@ terminal.setPrompt(prompt);
 // Register Commands
 terminal.registerCommand("banner", commands.banner);
 terminal.registerCommand("gui", commands.gui);
-terminal.registerCommand("test", commands.test);
+terminal.registerCommand("repo", commands.repo);
 terminal.registerCommand("theme", commands.theme, {
     description: "Set the active color scheme",
 });

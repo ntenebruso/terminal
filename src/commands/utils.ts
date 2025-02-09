@@ -14,7 +14,7 @@ export function gui(term: Terminal) {
 }
 
 export function repo(term: Terminal) {
-    window.open("https://github.com/ntenebruso/terminal-portfolio", "_blank");
+    window.open("https://github.com/ntenebruso/terminal", "_blank");
 
     term.println("Opening GitHub repo...");
 }
@@ -33,11 +33,6 @@ export function banner(term: Terminal) {
 --
 &#127881; This project is open-source! Type "repo" to view the repository.
 `);
-}
-
-export function test(term: Terminal) {
-    term.println("hi");
-    setTimeout(() => term.println("hi2"), 1000);
 }
 
 export function theme(term: Terminal, scheme: string) {
