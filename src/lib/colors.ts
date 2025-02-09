@@ -35,7 +35,7 @@ export function setTheme(name: string) {
 
     if (currentTheme == name) return;
 
-    themeElem.href = `/themes/${theme.file}`;
+    themeElem.href = `${import.meta.env.BASE_URL}/themes/${theme.file}`;
     currentTheme = theme.name;
     localStorage.setItem(THEME_KEY, theme.name);
 }
